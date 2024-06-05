@@ -1,5 +1,5 @@
 // src/App.js
-import React from 'react';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text } from '@react-three/drei';
 import { Physics } from '@react-three/rapier';
@@ -9,6 +9,7 @@ import Dice from './components/Dice';
 const App = () => {
   return (
     <Canvas shadows camera={{ position: [0, 10, 10], fov: 75 }}>
+      <Suspense>
       <Text position={[5, 5, -10]} color="black" >
         Click the dice to roll it.
       </Text>
@@ -30,6 +31,7 @@ const App = () => {
         <Dice />
       </Physics>
       <OrbitControls />
+      </Suspense>
     </Canvas>
   );
 };
