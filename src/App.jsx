@@ -1,14 +1,17 @@
 // src/App.js
 import React from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Text } from '@react-three/drei';
 import { Physics } from '@react-three/rapier';
 import Floor from './components/Floor';
 import Dice from './components/Dice';
 
 const App = () => {
   return (
-    <Canvas shadows camera={{ position: [0, 5, 10], fov: 50 }}>
+    <Canvas shadows camera={{ position: [0, 10, 10], fov: 75 }}>
+      <Text position={[5, 5, -10]} color="black" >
+        Click the dice to roll it.
+      </Text>
       <ambientLight intensity={0.5} />
       <directionalLight
         position={[5, 5, 5]}
@@ -24,12 +27,9 @@ const App = () => {
       />
       <Physics>
         <Floor />
-        {/* <Dice /> */}
+        <Dice />
       </Physics>
       <OrbitControls />
-      {/* <p className="read-the-docs">
-        dice set by Jeremy Eyring [CC-BY] via Poly Pizza
-      </p> */}
     </Canvas>
   );
 };
