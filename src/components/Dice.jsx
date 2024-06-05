@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Box, useGLTF } from '@react-three/drei';
 import { RigidBody } from '@react-three/rapier';
-import { Euler } from 'three'; 
 
 const Dice = () => {
   const diceRef = useRef();

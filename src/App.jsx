@@ -5,6 +5,7 @@ import { OrbitControls, Text } from '@react-three/drei';
 import { Physics } from '@react-three/rapier';
 import Floor from './components/Floor';
 import Dice from './components/Dice';
+import Wall from './components/Wall';
 
 const App = () => {
   return (
@@ -28,6 +29,9 @@ const App = () => {
       />
       <Physics>
         <Floor />
+        <Wall dimensions={[1,20,25]} position={[13,10,0]} />
+        <Wall dimensions={[1,20,25]} position={[-13,10,0]} />
+        <Wall dimensions={[25,20,1]} position={[0,10,-12.5]} />
         <Dice />
       </Physics>
       <OrbitControls />

@@ -6,7 +6,7 @@ const Floor = () => {
   return (
     <RigidBody type="fixed">
       <mesh receiveShadow>
-        <boxGeometry args={[50, 1, 50]} />
+        <boxGeometry args={[25, 1, 25]} />
         <meshStandardMaterial color="lightgreen" />
       </mesh>
     </RigidBody>
